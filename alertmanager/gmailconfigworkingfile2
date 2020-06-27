@@ -1,0 +1,19 @@
+global:
+  resolve_timeout: 2m      
+
+
+route:
+        #  group_by: [Alertname]
+  # Send all notifications to me.
+  receiver: email-me
+
+receivers:
+- name: email-me
+  email_configs:
+  - to: xyz@gmail.com
+    from: xyz@gmail.com
+    smarthost: smtp.gmail.com:587
+    auth_username: "xyzs@gmail.com"
+    auth_identity: "xyz@gmail.com"
+    auth_password: "yourpassword"
+    send_resolved: true 
